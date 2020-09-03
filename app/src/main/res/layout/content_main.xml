@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FILENAME:       content_main.xml
+    DATE:           2020-08-30
+    PROGRAMMER:     Jack Parkinson
+    DESCRIPTION:
+        This is the layout XML file for the Poker Tracker app.  The elements in this file
+        describe how each element (field, button, label, etc.) orients itself on the page
+        relative to the rest of them.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <FrameLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/timer_label_hours"
+        app:layout_constraintStart_toStartOf="@+id/timer_label_hours"
+        app:layout_constraintTop_toBottomOf="@+id/timer_label_hours">
+
+
+        <EditText
+            android:id="@+id/field_hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="@string/zero"
+            android:inputType="number"
+            android:nextFocusDown="@+id/field_minutes" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/timer_label_minutes"
+        app:layout_constraintStart_toStartOf="@+id/timer_label_minutes"
+        app:layout_constraintTop_toBottomOf="@+id/timer_label_minutes">
+
+
+        <EditText
+            android:id="@+id/field_minutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="@string/zero"
+            android:inputType="number"
+            android:nextFocusDown="@+id/field_stack" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/title_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:text="@string/poker_title_timer"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider_stack"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="100dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_timer" />
+
+    <TextView
+        android:id="@+id/title_stack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:text="@string/poker_title_stack"
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider_stack" />
+
+    <TextView
+        android:id="@+id/text_mfactor_bb_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/poker_stack_mfactor"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_stack" />
+
+    <FrameLayout
+        android:id="@+id/holder_mfactor_bb_remaining"
+        android:layout_width="125dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_toggle_mfactor_bb_remaining"
+        app:layout_constraintStart_toStartOf="@+id/field_stack"
+        app:layout_constraintTop_toTopOf="@+id/button_toggle_mfactor_bb_remaining">
+
+        <TextView
+            android:id="@+id/value_mfactor_bb_remaining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/poker_stack_zeroes"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button_reset_stack"
+        android:layout_width="80dp"
+        android:layout_height="41dp"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/button_reset"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button_toggle_mfactor_bb_remaining"
+        app:layout_constraintEnd_toEndOf="@+id/button_toggle_mfactor_bb_remaining"
+        app:layout_constraintStart_toStartOf="@+id/button_toggle_mfactor_bb_remaining"
+        app:layout_constraintTop_toBottomOf="@+id/divider_stack" />
+
+    <Button
+        android:id="@+id/button_toggle_mfactor_bb_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/poker_stack_button_switch"
+        app:layout_constraintEnd_toEndOf="@+id/field_stack"
+        app:layout_constraintTop_toBottomOf="@+id/divider_stack" />
+
+    <TextView
+        android:id="@+id/label_stack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/poker_stack_stack"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/field_stack"
+        app:layout_constraintStart_toStartOf="@+id/text_mfactor_bb_remaining"
+        app:layout_constraintTop_toBottomOf="@+id/text_mfactor_bb_remaining"
+        app:layout_constraintVertical_bias="0.791" />
+
+    <TextView
+        android:id="@+id/label_big_blind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/poker_stack_big_blind"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/field_big_blind"
+        app:layout_constraintStart_toStartOf="@+id/label_stack"
+        app:layout_constraintTop_toBottomOf="@+id/label_stack"
+        app:layout_constraintVertical_bias="0.742" />
+
+    <TextView
+        android:id="@+id/label_small_blind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/poker_stack_small_blind"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/field_small_blind"
+        app:layout_constraintStart_toStartOf="@+id/label_big_blind"
+        app:layout_constraintTop_toTopOf="@+id/field_small_blind" />
+
+    <TextView
+        android:id="@+id/label_ante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/poker_stack_ante"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/field_ante"
+        app:layout_constraintStart_toStartOf="@+id/label_small_blind"
+        app:layout_constraintTop_toTopOf="@+id/field_ante" />
+
+    <EditText
+        android:id="@+id/field_stack"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/zero"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:text="@string/blank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/field_big_blind"
+        app:layout_constraintTop_toBottomOf="@+id/holder_mfactor_bb_remaining" />
+
+    <EditText
+        android:id="@+id/field_big_blind"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/zero"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:text="@string/blank"
+        app:layout_constraintEnd_toEndOf="@+id/field_small_blind"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/field_small_blind"
+        app:layout_constraintTop_toBottomOf="@+id/field_stack" />
+
+    <EditText
+        android:id="@+id/field_small_blind"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/zero"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:text="@string/blank"
+        app:layout_constraintEnd_toEndOf="@+id/field_ante"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/field_ante"
+        app:layout_constraintTop_toBottomOf="@+id/field_big_blind" />
+
+    <EditText
+        android:id="@+id/field_ante"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="@string/zero"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:text="@string/blank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/field_small_blind" />
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/poker_stack_button_calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/field_ante" />
+
+    <Button
+        android:id="@+id/button_reset_timer"
+        android:layout_width="80dp"
+        android:layout_height="41dp"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/button_reset"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button_timer_control"
+        app:layout_constraintEnd_toEndOf="@+id/button_timer_control"
+        app:layout_constraintStart_toStartOf="@+id/button_timer_control"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_timer_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="@string/poker_timer_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/holder_timer_display"
+        app:layout_constraintTop_toBottomOf="@+id/title_timer" />
+
+    <FrameLayout
+        android:id="@+id/holder_timer_display"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintStart_toStartOf="@+id/title_timer"
+        app:layout_constraintTop_toBottomOf="@+id/title_timer">
+
+        <TextView
+            android:id="@+id/timer_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/poker_timer_zeroes"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/timer_label_hours"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="@string/poker_timer_hours"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/timer_label_minutes"
+        app:layout_constraintEnd_toStartOf="@+id/timer_label_minutes"
+        app:layout_constraintTop_toTopOf="@+id/timer_label_minutes" />
+
+    <TextView
+        android:id="@+id/timer_label_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/poker_timer_minutes"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/title_timer"
+        app:layout_constraintEnd_toStartOf="@+id/title_timer"
+        app:layout_constraintTop_toTopOf="@+id/title_timer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

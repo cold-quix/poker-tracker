@@ -1,0 +1,44 @@
+<!--
+    FILENAME:       strings.xml
+    DATE:           2020-08-30
+    PROGRAMMER:     Jack Parkinson
+    DESCRIPTION:
+        Contains string values used in the Poker Tracker app, specifically the content_main.xml
+        file.
+-->
+<resources>
+    <string name="app_name">PokerTracker</string>
+    <string name="title_activity_main">Poker Tracker v1.0</string>
+    <string name="blank"></string>
+    <string name="zero">0</string>
+    <!-- Titles for subsections -->
+    <string name="poker_title">Welcome to the poker tracker app</string>
+    <string name="poker_title_timer">Timer</string>
+    <string name="poker_title_stack">Stack Management</string>
+
+    <!-- Labels for generic buttons -->
+    <string name="button_reset">Reset</string>
+
+    <!-- Labels for timer section -->
+    <string name="poker_timer_hours">Hours</string>
+    <string name="poker_timer_minutes">Minutes</string>
+    <string name="poker_timer_seconds">Seconds</string>
+    <string name="poker_timer_zeroes">00:00:00</string>
+    <string name="poker_timer_start">Start</string>
+    <string name="poker_timer_stop">Stop</string>
+    <string name="poker_timer_plus">+</string>
+    <string name="poker_timer_minus">-</string>
+
+    <!-- Labels for stack section -->
+    <string name="poker_stack_mfactor">M Factor</string>
+    <string name="poker_stack_big_blinds_remaining">Big Blinds Remaining</string>
+    <string name="poker_stack_stack">Stack</string>
+    <string name="poker_stack_big_blind">Big Blind</string>
+    <string name="poker_stack_small_blind">Small Blind</string>
+    <string name="poker_stack_ante">Ante</string>
+    <string name="poker_stack_zeroes">0.00</string>
+
+    <string name="poker_stack_button_switch">Switch</string>
+    <string name="poker_stack_button_calculate">Calculate</string>
+
+</resources>
