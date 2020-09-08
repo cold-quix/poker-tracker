@@ -1,4 +1,4 @@
-package com.example.pokertracker;
+package poker.jp.pokertracker;
 
 import org.junit.Test;
 

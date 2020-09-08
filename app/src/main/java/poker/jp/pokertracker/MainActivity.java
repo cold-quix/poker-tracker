@@ -12,12 +12,10 @@ DESCRIPTION:
     such as M-factor, # of big blinds remaining, and the time left before the blinds increase.
  */
 
-package com.example.pokertracker;
+package poker.jp.pokertracker;
 
 import android.os.Bundle;
 import android.os.Handler;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

@@ -8,7 +8,9 @@
         the application and its activities.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pokertracker">
+    package="poker.jp.pokertracker"
+    android:versionCode="2"
+    android:versionName="1.0.0">
 
     <application
         android:allowBackup="true"
@@ -18,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="poker.jp.pokertracker.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.example.pokertracker;
+package poker.jp.pokertracker;
 
 import android.content.Context;
 
